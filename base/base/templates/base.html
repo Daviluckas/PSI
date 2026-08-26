@@ -8,14 +8,16 @@
 
 <body>
     <nav>
-        <a href="{{ url_for('index') }}">Início</a>
+        <a href="{{ url_for('catalog.index') }}">Início</a>
+
         {% if session.get('usuario') %}
-        <span>Sair ({{ session.usuario }})</span>
-        <a href="{{ url_for('logout') }}">Sair</a>
+            <span>Sair ({{ session.usuario }})</span>
+            <a href="{{ url_for('auth.logout') }}">Sair</a>
         {% else %}
-        <a href="{{ url_for('login') }}">Entrar</a>
+            <a href="{{ url_for('auth.login') }}">Entrar</a>
         {% endif %}
     </nav>
+
     <div class="container">
         {% block conteudo %}{% endblock %}
     </div>
