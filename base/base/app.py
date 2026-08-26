@@ -1,8 +1,17 @@
 from flask import Flask, render_template, request, redirect, url_for, session
 import models
 
+from blueprints.auth import auth_bp
+from blueprints.catalog import catalog_bp
+from blueprints.reviews import reviews_bp
+
+
 app = Flask(__name__)
 app.secret_key = 'atividade01'
+
+app.register_blueprint(auth_bp)
+app.register_blueprint(catalog_bp)
+app.register_blueprint(reviews_bp)
 
 @app.route('/')
 def index():
