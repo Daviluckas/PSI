@@ -4,21 +4,31 @@
 
 {% block conteudo %}
     <h1>Catálogo de Livros</h1>
-    
-    <form method="get" action="{{ url_for('index') }}">
-        <input type="text" name="q" placeholder="Buscar por título..." value="{{ q or '' }}">
+
+    <form method="get" action="{{ url_for('catalog.index') }}">
+        <input
+            type="text"
+            name="q"
+            placeholder="Buscar por título..."
+            value="{{ q or '' }}"
+        >
         <button type="submit">Buscar</button>
     </form>
-    
+
     {% if q %}
         <p>Resultados para: "{{ q }}"</p>
     {% endif %}
-    
+
     {% for livro in livros %}
         <div class="card">
             <div class="livro-titulo">{{ livro.titulo }}</div>
-            <div class="livro-info">{{ livro.autor }} ({{ livro.ano }})</div>
-            <a href="{{ url_for('livro_detalhe', livro_id=livro.id) }}">Ver detalhes</a>
+            <div class="livro-info">
+                {{ livro.autor }} ({{ livro.ano }})
+            </div>
+
+            <a href="{{ url_for('catalog.ver_livro', livro_id=livro.id) }}">
+                Ver detalhes
+            </a>
         </div>
     {% else %}
         <p>Nenhum livro encontrado.</p>

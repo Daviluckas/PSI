@@ -4,27 +4,44 @@
 
 {% block conteudo %}
     <h1>{{ livro.titulo }}</h1>
+
     <p><strong>Autor:</strong> {{ livro.autor }}</p>
     <p><strong>Ano:</strong> {{ livro.ano }}</p>
     <p><strong>Gênero:</strong> {{ livro.genero }}</p>
-    
-    <a href="{{ url_for('index') }}">Voltar</a>
-    
+
+    <a href="{{ url_for('catalog.index') }}">Voltar</a>
+
     <h2>Resenhas</h2>
+
     {% for resenha in resenhas %}
         <div class="resenha">
-            <div class="resenha-usuario">{{ resenha.usuario }}</div>
-            <div class="resenha-nota">Nota: {{ resenha.nota }}/5</div>
+            <div class="resenha-usuario">
+                {{ resenha.usuario }}
+            </div>
+
+            <div class="resenha-nota">
+                Nota: {{ resenha.nota }}/5
+            </div>
+
             <p>{{ resenha.texto }}</p>
         </div>
     {% else %}
         <p>Nenhuma resenha ainda.</p>
     {% endfor %}
-    
+
     {% if session.get('usuario') %}
         <h3>Nova Resenha</h3>
-        <form method="post" action="{{ url_for('resenhar', livro_id=livro.id) }}">
-            <textarea name="texto" placeholder="Sua resenha..." required></textarea>
+
+        <form
+            method="post"
+            action="{{ url_for('reviews.resenhar', livro_id=livro.id) }}"
+        >
+            <textarea
+                name="texto"
+                placeholder="Sua resenha..."
+                required
+            ></textarea>
+
             <select name="nota" required>
                 <option value="">Selecione uma nota</option>
                 <option value="1">1 - Muito Ruim</option>
@@ -33,9 +50,13 @@
                 <option value="4">4 - Bom</option>
                 <option value="5">5 - Excelente</option>
             </select>
+
             <button type="submit">Enviar Resenha</button>
         </form>
     {% else %}
-        <p><a href="{{ url_for('login') }}">Faça login</a> para escrever uma resenha.</p>
+        <p>
+            <a href="{{ url_for('auth.login') }}">Faça login</a>
+            para escrever uma resenha.
+        </p>
     {% endif %}
 {% endblock %}
