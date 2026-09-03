@@ -1,1 +1,1 @@
-# psi-atividade2-davilucas
+Repositório usado na matéria de PSI no IFRN
