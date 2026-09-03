@@ -1,17 +1,14 @@
-from sqlalchemy import DeclarativeBase, Mapped, mapped_column, String
-from sqlalchemy import create_engine
-from sqlalchemy import validates
+from sqlalchemy import String, Integer
+from sqlalchemy.orm import DeclarativeBase, validates, Mapped, mapped_column
 
-engine = create_engine("sqlite:///atividade3.db")
-
-class base(DeclarativeBase):
+class Base(DeclarativeBase):
     pass
 
-class User(base):
+class User(Base):
     __tablename__ = "usuarios"
 
     id: Mapped[int] = mapped_column(primary_key=True)
-    idade: Mapped[int] = mapped_column(int)
+    idade: Mapped[int] = mapped_column(Integer)
     nome: Mapped[str] = mapped_column(String(30))
     email: Mapped[str] = mapped_column(String(25), unique=True)
 
