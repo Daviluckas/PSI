@@ -18,3 +18,5 @@ class User(Base):
             raise ValueError("Is not email, lapão!")
         return address
 
+    def __repr__(self):
+        return(f'Id: {self.id}, Nome: {self.nome}, Idade: {self.idade}, Email: {self.email}')
