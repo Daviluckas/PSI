@@ -1,4 +1,7 @@
 from flask import Blueprint, render_template, request
+from models import User
+from sqlalchemy import engine
+from sqlalchemy.orm import Session
 
 users_bp = Blueprint('users',__name__,url_prefix='/users')
 
@@ -10,8 +13,9 @@ def cad_users():
         email = request.form['email']
         senha = request.form['senha']
 
-        print(nome)
-        print(email)
-        print(senha)
+        usuario = User(nome=nome, email=email, senha=senha)
 
+        with Session(engine) as session:
+            session.add(usuario)
+            session.commit()
     return render_template('users.html')
