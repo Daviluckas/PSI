@@ -1,6 +1,6 @@
 from models import User
 from flask import Blueprint, render_template, request
-from sqlalchemy import engine
+from config import engine
 from sqlalchemy.orm import Session
 
 users_bp = Blueprint('users',__name__,url_prefix='/users')
