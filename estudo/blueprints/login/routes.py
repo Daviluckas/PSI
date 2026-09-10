@@ -11,7 +11,7 @@ def login():
     email = request.form['email']
     senha = request.form['senha']
 
-    with Session(engine) as session:
+    with Session(engine) as db:
       usuario = db.query(User).filter_by(email=email).first()
 
       if usuario and usuario.senha == senha:
