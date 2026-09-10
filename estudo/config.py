@@ -4,4 +4,4 @@ from models import Base
 engine = create_engine('sqlite:///database.db')
 Base.metadata.create_all(bind=engine)
 
-SECRET_KEY = '1243'
+SECRET_KEY = 'chaves'

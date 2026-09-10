@@ -16,6 +16,6 @@ def login():
 
       if usuario and usuario.senha == senha:
         session['usuario_id'] = usuario.id
-        return redirect(url_for ('home.home'))
+        return redirect(url_for ('livros.livros'))
 
   return render_template('login.html')
