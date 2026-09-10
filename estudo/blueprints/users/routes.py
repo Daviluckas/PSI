@@ -1,5 +1,5 @@
-from flask import Blueprint, render_template, request
 from models import User
+from flask import Blueprint, render_template, request
 from sqlalchemy import engine
 from sqlalchemy.orm import Session
 
