@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{% block title %}Meu Sistema{% endblock %}</title>
+</head>
+
+<body>
+
+    <header>
+        <h1>Meu Sistema</h1>
+    </header>
+
+    <nav>
+        <a href="/">Início</a>
+        <a href="/users/">Cadastrar</a>
+    </nav>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>Meu Sistema</p>
+    </footer>
+
+</body>
+
+</html>
