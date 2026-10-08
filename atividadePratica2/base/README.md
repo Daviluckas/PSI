@@ -16,5 +16,10 @@ python main.py
 Responda ao final:
 
 1. Para que serve o campo `disponivel` em `Livro`?
+Para saber se aquele livro está disponível ou não
+
 2. Por que é necessário chamar `session.commit()` após emprestar ou devolver?
+Para que aquela alteração seja registarda no sistema
+
 3. Em qual consulta você usa o relacionamento entre `Livro` e `Autor`?
+Não fiz as consultas
