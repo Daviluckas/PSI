@@ -1,7 +1,17 @@
-<title>
-    {% block title %}
-    {% endblock %}
-</title>
+```html
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {% block title %}
+        {% endblock %}
+    </title>
+</head>
 
-{% block content %}
-{% endblock %}
+<body>
+    {% block content %}
+    {% endblock %}
+</body>
+</html>
+```
