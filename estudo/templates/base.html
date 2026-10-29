@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{% block title %}Meu Sistema{% endblock %}</title>
+</head>
+
+<body>
+
+    <header>
+        <h1>Página Inicial</h1>
+    </header>
+
+    <nav>
+        <a href="/">Início</a>
+        <a href="/users/">Cadastrar</a>
+        <a href="/login/">Login</a>
+    </nav>
+
+    <p>Ao se cadastrar, clique em login para ir para a página principal</p>
+    <p>O login só funciona com um email já cadastrado.</p>
+    
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+</body>
+</html>
