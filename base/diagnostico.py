@@ -53,7 +53,7 @@ def titulos_disponiveis(livros):
         if l['disponivel']:
             lista2.append(l)
     return lista2
-
+    
 
 def nome_usuario(usuario):
     # Tarefa 6: retorne o nome ou "desconhecido" se a chave nao existir.
@@ -66,12 +66,21 @@ def nome_usuario(usuario):
 
 def buscar_livro(livros, livro_id):
     # Tarefa 7: retorne o livro com o id ou None.
+
+    for livro in livros:
+        if livro["id"] == livro_id:
+            return livro
+      
     return None
 
 
 def converter_idade(texto):
-    # Tarefa 8: converta para inteiro; em caso de erro, retorne None.
-    return None
+    # Tarefa 8: converta para inteiro; em caso de erro, retorne None.~
+    try: 
+        return int(texto)
+    except ValueError:
+        return None
+
 
 
 class Livro:

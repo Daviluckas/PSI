@@ -24,4 +24,10 @@ Tarefa 5: Utilizei o for assim como na questão anterior. Agora utilizei o appen
 
 Tarefa 6: De forma bem simples fiz um if e else para saber se o nome estava em usuario, se não estivesse, retornava desconhecido, se estivesse retornava o nome. 
  
-Tarefa 7: 
+Tarefa 7: Utilizei um for para checar a presença de livro em livros. Dessa forma, utilizei um if para o id dos livros receberem livro_id, com isso, se tiver um livro com o id setado, ele será retornado, se não, retorna none.
+
+Tarefa 8: Utilizei o try, que faz uma checagem, tipo um if mais elaborado. Ele checa se o texto foi convertido para inteiro, se sim, ele mostra o resultado. Se não, tem o except que serve quase como um else onde a pessoa diz o erro que vai ser esperado, nesse caso valueError, se cair nesse erro, ele restorna none. É quase um if e else mais elaborados. A, e usei também a função int, que já transforma o texto em inteiro.
+
+Tarefa 9: Não tem na atividade
+
+Tarefa 10: Não consegui
