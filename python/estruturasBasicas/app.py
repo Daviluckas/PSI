@@ -43,8 +43,8 @@ def detalhe_livro(livro_id):
         if livro['id'] == livro_id:
             livro_encontrado = livro
             break
-        if livro_encontrado is None:
-            return 'livro não encontrado',404
+    if livro_encontrado is None:
+        return 'livro não encontrado',404
     return render_template("detalhe.html", livro=livro_encontrado)
 
 
