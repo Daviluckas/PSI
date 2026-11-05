@@ -32,5 +32,9 @@ livros = [
 def inicio():
     return render_template("inicio.html")
 
+@app.route("/livros")
+def listar_livros():
+    return render_template("livros.html")
+
 if __name__ == "__main__":
     app.run(debug=True)
