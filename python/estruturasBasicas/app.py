@@ -34,7 +34,7 @@ def inicio():
 
 @app.route("/livros")
 def listar_livros():
-    return render_template("livros.html")
+    return render_template("livros.html", livros=livros)
 
 if __name__ == "__main__":
     app.run(debug=True)

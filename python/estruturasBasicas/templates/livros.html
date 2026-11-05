@@ -5,7 +5,7 @@
 
     <ul>
         {%for livro in livros%}
-            <li>{{livro}}</li>
+            <li>{{livro['titulo']}} - {{livro['autor']}}</li>
         {%endfor%}
     </ul>
 {% endblock %}
