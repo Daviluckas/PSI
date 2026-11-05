@@ -2,6 +2,14 @@
 
 {% block conteudo %}
     <h2>Detalhes</h2>
-    <p>{{livro}}</p>
+    {%if livro['disponivel']%}
+        <h3>Esse livro está disponível para empréstimo!</h3>
+        <p>{{livro['titulo']}}</p>
+        <p>{{livro['autor']}}</p>
+        <p>{{livro['ano']}}</p>
+        <p>{{livro['disponivel']}}</p>
+    {%else%}   
+        <h3>Esse livro não está disponível no momento!</h3>
+    {%endif%}
     <a href="{{ url_for('listar_livros') }}">Listar livros</a>
 {% endblock %}
