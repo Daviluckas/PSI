@@ -11,6 +11,7 @@
             {%else%}
                 <span>Indisponivel</span>
             {%endif%}
-        {%endfor%}
+            <a href="{{ url_for('detalhe_livro', livro_id=livro['id']) }}">Ver detalhes</a>
+            {%endfor%}
     </ul>
 {% endblock %}

@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+
+{% block conteudo %}
+    <h2>Detalhes</h2>
+    <p>{{livro}}</p>
+    <a href="{{ url_for('listar_livros') }}">Listar livros</a>
+{% endblock %}
