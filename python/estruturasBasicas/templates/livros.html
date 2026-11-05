@@ -6,6 +6,11 @@
     <ul>
         {%for livro in livros%}
             <li>{{livro['titulo']}} - {{livro['autor']}}</li>
+            {%if livro['disponivel']%}
+                <span>Disponivel</span>
+            {%else%}
+                <span>Indisponivel</span>
+            {%endif%}
         {%endfor%}
     </ul>
 {% endblock %}
