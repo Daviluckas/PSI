@@ -47,7 +47,14 @@ def detalhe_livro(livro_id):
         return 'livro não encontrado',404
     return render_template("detalhe.html", livro=livro_encontrado)
 
+@app.route("/livros/disponiveis")
+def disponiveis():
+    livros_disponiveis = []
 
+    for livro in livros:
+        if livro['disponivel']:
+            livros_disponiveis.append(livro)
+    return render_template("livros.html", livros=livros_disponiveis)
 
 if __name__ == "__main__":
     app.run(debug=True)

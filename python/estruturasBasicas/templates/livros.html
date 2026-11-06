@@ -13,5 +13,6 @@
             {%endif%}
             <a href="{{ url_for('detalhe_livro', livro_id=livro['id']) }}">Ver detalhes</a>
             {%endfor%}
-    </ul>
+        </ul>
+        <a href="{{ url_for('disponiveis', livros=livros_disponiveis) }}">Livros disponiveis</a>
 {% endblock %}
